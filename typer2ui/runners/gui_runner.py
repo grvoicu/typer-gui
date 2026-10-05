@@ -63,7 +63,7 @@ class _CommandView:
         self.component_refs: dict[int, ft.Control] = {}
         self.text_buffer: list[str] = []  # Buffer for accumulating consecutive text
         self.current_text_control: Optional[ft.Text] = None  # For live text updates (long commands)
-        self.run_button: Optional[ft.ElevatedButton] = None  # Reference to run button
+        self.run_button: Optional[ft.Button] = None  # Reference to run button
 
 
 class GUIRunner(Runner):
@@ -775,7 +775,7 @@ class GUIRunner(Runner):
                 await self._select_command(command)
 
             if cmd.ui_spec.button:
-                btn = ft.ElevatedButton(
+                btn = ft.Button(
                     cmd.name,
                     on_click=handle_click,
                     bgcolor="#2563EB",
@@ -971,7 +971,7 @@ class GUIRunner(Runner):
                 self.page.update()
 
         # Submit button (hide if auto-executing)
-        submit_button = ft.ElevatedButton(
+        submit_button = ft.Button(
             command.ui_spec.submit_name,
             on_click=on_submit,
             visible=not command.ui_spec.auto,
@@ -1082,7 +1082,7 @@ class GUIRunner(Runner):
             async def handle_run(e):
                 await self._run_command()
 
-            run_button = ft.ElevatedButton(
+            run_button = ft.Button(
                 command.ui_spec.submit_name,
                 icon=ft.Icons.PLAY_ARROW,
                 on_click=handle_run,

@@ -880,7 +880,7 @@ class Typer2Ui:
         flet_main = create_flet_app(self.app_spec, self)
 
         # Run the Flet app
-        ft.app(target=flet_main)
+        ft.run(main=flet_main)
 
     @property
     def is_cli_mode(self) -> bool:
