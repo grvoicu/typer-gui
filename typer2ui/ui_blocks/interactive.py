@@ -41,13 +41,13 @@ class Button(UiBlock):
         return ""
 
     def build_gui(self, ctx) -> Any:
-        """Build Button for GUI (returns Flet ElevatedButton).
+        """Build Button for GUI (returns Flet Button).
 
         Args:
             ctx: GUI runner context
 
         Returns:
-            Flet ElevatedButton control
+            Flet Button control
         """
         import flet as ft
 
@@ -73,7 +73,7 @@ class Button(UiBlock):
             finally:
                 set_current_runner(saved_runner)
 
-        return ft.ElevatedButton(
+        return ft.Button(
             self.text,
             icon=icon_obj,
             on_click=handle_click,

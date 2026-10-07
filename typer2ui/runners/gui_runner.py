@@ -784,7 +784,7 @@ class GUIRunner(Runner):
                         shape=ft.RoundedRectangleBorder(radius=6),
                         padding=ft.Padding(left=16, right=16, top=10, bottom=10),
                         shadow_color="#2563EB40",
-                        elevation={"": 1, "hovered": 2},
+                        elevation={ft.ControlState.DEFAULT: 1, ft.ControlState.HOVERED: 2},
                     ),
                 )
             else:
@@ -794,9 +794,9 @@ class GUIRunner(Runner):
                     style=ft.ButtonStyle(
                         shape=ft.RoundedRectangleBorder(radius=6),
                         padding=ft.Padding(left=16, right=16, top=10, bottom=10),
-                        color={"": "#374151", "hovered": "#2563EB"},
-                        bgcolor={"": "transparent", "hovered": "#F3F4F6"},
-                        overlay_color={"hovered": "#F3F4F610"},
+                        color={ft.ControlState.DEFAULT: "#374151", ft.ControlState.HOVERED: "#2563EB"},
+                        bgcolor={ft.ControlState.DEFAULT: "transparent", ft.ControlState.HOVERED: "#F3F4F6"},
+                        overlay_color={ft.ControlState.HOVERED: "#F3F4F610"},
                     ),
                 )
             buttons.append(btn)
@@ -1092,7 +1092,7 @@ class GUIRunner(Runner):
                     shape=ft.RoundedRectangleBorder(radius=6),
                     padding=ft.Padding(left=20, right=20, top=12, bottom=12),
                     shadow_color="#2563EB40",
-                    elevation={"": 2, "hovered": 3},
+                    elevation={ft.ControlState.DEFAULT: 2, ft.ControlState.HOVERED: 3},
                 ),
             )
 
@@ -1119,8 +1119,8 @@ class GUIRunner(Runner):
                     style=ft.ButtonStyle(
                         shape=ft.RoundedRectangleBorder(radius=6),
                         padding=ft.Padding(left=20, right=20, top=12, bottom=12),
-                        color={"": "#6B7280"},
-                        side={"": ft.BorderSide(1, "#D1D5DB")},
+                        color={ft.ControlState.DEFAULT: "#6B7280"},
+                        side={ft.ControlState.DEFAULT: ft.BorderSide(1, "#D1D5DB")},
                     ),
                 )
                 buttons.append(clear_button)
