@@ -39,6 +39,9 @@ class _RealTimeWriter(io.StringIO):
         self.buffer = ""
 
     def write(self, text):
+        if (isinstance(text, bytes)):
+            text = text.decode("utf-8")
+
         if text:
             self.buffer += text
             while '\n' in self.buffer:
