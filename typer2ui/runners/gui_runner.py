@@ -778,7 +778,7 @@ class GUIRunner(Runner):
                 btn = ft.Button(
                     cmd.name,
                     on_click=handle_click,
-                    bgcolor="#2563EB",
+                    bgcolor={ft.ControlState.DEFAULT: "#2563EB", ft.ControlState.HOVERED: "#1DD8D2"},
                     color="#FFFFFF",
                     style=ft.ButtonStyle(
                         shape=ft.RoundedRectangleBorder(radius=6),
@@ -1086,7 +1086,7 @@ class GUIRunner(Runner):
                 command.ui_spec.submit_name,
                 icon=ft.Icons.PLAY_ARROW,
                 on_click=handle_run,
-                bgcolor="#2563EB",
+                bgcolor={ft.ControlState.DEFAULT: "#2563EB", ft.ControlState.HOVERED: "#1DD8D2"},
                 color="#FFFFFF",
                 style=ft.ButtonStyle(
                     shape=ft.RoundedRectangleBorder(radius=6),
